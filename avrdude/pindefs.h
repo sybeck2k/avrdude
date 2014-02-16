@@ -57,13 +57,7 @@ enum {
 #define PIN_MASK    (UINT_MAX>>1)
 #define PIN_INVERSE (~(PIN_MASK))	/* flag for inverted pin in serbb */
 #define PIN_MIN     0   /* smallest allowed pin number */
-#define PIN_MAX     31  /* largest allowed pin number */
-
-#ifdef HAVE_LINUX_GPIO
-/* Embedded systems might have a lot more gpio than only 0-31 */
-#undef PIN_MAX
-#define PIN_MAX     255 /* largest allowed pin number */
-#endif
+#define PIN_MAX     255  /* largest allowed pin number */
 
 /** Number of pins in each element of the bitfield */
 #define PIN_FIELD_ELEMENT_SIZE (sizeof(pinmask_t) * 8)
